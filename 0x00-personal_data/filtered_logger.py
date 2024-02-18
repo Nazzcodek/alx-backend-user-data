@@ -5,6 +5,8 @@ import re
 import logging
 import mysql.connector
 
+PII_FIELDS = ['password', 'name', 'email','phone', 'ssn']
+
 
 def filter_datum(fields: List[str], redaction: str,
                  message: str, separator: str) -> str:
