@@ -43,7 +43,10 @@ def login():
     return response
 
 
-@app_views.route('/api/v1/auth_session/logout', methods=['DELETE'], strict_slashes=False)
+@app_views.route(
+            '/api/v1/auth_session/logout',
+            methods=['DELETE'],
+            strict_slashes=False)
 def logout():
     """Handles the logout process for session authentication."""
     if not auth.destroy_session(request):
