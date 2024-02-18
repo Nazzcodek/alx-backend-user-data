@@ -2,6 +2,7 @@
 """ This is the auth module """
 from flask import request
 from typing import List, TypeVar
+import fnmatch
 
 
 class Auth:
@@ -20,6 +21,9 @@ class Auth:
                 excluded_path += '/'
 
             if path == excluded_path:
+                return False
+
+            if fnmatch.fnmatch(path, excluded_path):
                 return False
 
         return True
