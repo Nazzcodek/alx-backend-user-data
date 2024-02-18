@@ -2,11 +2,12 @@
 """module for session route"""
 from flask import Flask, request, jsonify, make_response
 import os
-from api.v1.models.user import User
+from models.user import User
 from api.v1.auth.auth import Auth
+from api.v1.views import app_views
 
 
-@app.route('/auth_session/login', methods=['POST'], strict_slashes=False)
+@app_views.route('/auth_session/login', methods=['POST'], strict_slashes=False)
 def login():
     """Handles the login process for session authentication."""
     email = request.form.get('email')
