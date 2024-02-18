@@ -11,9 +11,9 @@ def filter_datum(fields: List[str], redaction: str,
     """this is a filter datum module"""
     for field in fields:
         regex = "{}=.*?{}".format(field, separator)
-        log_msg = re.sub(regex, "{}={}{}".format(field, redaction, separator),
+        message = re.sub(regex, "{}={}{}".format(field, redaction, separator),
                          message)
-    return log_msg
+    return message
 
 
 def get_logger() -> logging.Logger:
