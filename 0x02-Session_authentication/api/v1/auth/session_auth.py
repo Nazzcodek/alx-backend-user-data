@@ -3,6 +3,7 @@
 from api.v1.auth.auth import Auth
 from uuid import uuid4
 
+
 class SessionAuth(Auth):
     """this is the session authentication object instances"""
     user_id_by_session_id = {}
