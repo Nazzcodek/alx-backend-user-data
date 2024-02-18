@@ -38,3 +38,16 @@ class Auth:
         """ method to get current user"""
         if request is None:
             return None
+
+    def session_cookie(self, request=None):
+        """session cookies"""
+        if request is None:
+            return None
+
+        SESSION_NAME = os.environ('SESSION_NAME')
+        if SESSION_NAME is None:
+            return None
+
+        cookies = request.cookies.get(SESSION_NAME)
+        return cookies
+
