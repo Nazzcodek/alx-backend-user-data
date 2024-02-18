@@ -3,6 +3,7 @@
 from typing import List
 import re
 import logging
+import mysql.connector
 
 
 def filter_datum(fields: List[str], redaction: str,
