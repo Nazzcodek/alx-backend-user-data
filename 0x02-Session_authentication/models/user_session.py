@@ -4,6 +4,10 @@ from models.base import Base
 
 
 class UserSession(Base):
-    def __init__(self, *args, **kwargs):
+    """user session model"""
+
+    def __init__(self, *args: list, **kwargs: dict):
+        """init method"""
+        super().__init__(*agrs, **kwargs)
         self.user_id = kwargs.get('user_id')
         self.session_id = kwargs.get('session_id')
