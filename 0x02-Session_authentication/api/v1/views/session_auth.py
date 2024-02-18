@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""session route"""
+"""module for session route"""
 from flask import Flask, request, jsonify, make_response
 import os
 from api.v1.models.user import User
@@ -35,6 +35,8 @@ def login():
 
     # Set the session cookie in the response
     response = make_response(jsonify(user.to_json()))
-    response.set_cookie(os.environ.get('SESSION_NAME', 'session_id'), session_id)
+    response.set_cookie(os.environ.get(
+                            'SESSION_NAME',
+                            'session_id'), session_id)
 
     return response
