@@ -9,7 +9,7 @@ def hash_password(password: str) -> bytes:
     return encrypt
 
 
-def is_valid(hash_pwd: bytes, password: str) -> bool:
+def is_valid(hashed_password: bytes, password: str) -> bool:
     """this method check if passowrd is valid"""
-    decrypt = b.checkpw(password.encode(), hash_pwd)
+    decrypt = b.checkpw(password.encode(), hashed_password)
     return decrypt
