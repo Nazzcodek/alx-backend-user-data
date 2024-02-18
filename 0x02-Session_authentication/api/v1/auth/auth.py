@@ -45,7 +45,7 @@ class Auth:
         if request is None:
             return None
 
-        SESSION_NAME = os.environ('SESSION_NAME')
+        SESSION_NAME = os.environ.get('SESSION_NAME')
         if SESSION_NAME is None:
             return None
 
