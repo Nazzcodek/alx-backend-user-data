@@ -3,6 +3,7 @@
 from flask import request
 from typing import List, TypeVar
 import fnmatch
+import os
 
 
 class Auth:
@@ -50,4 +51,3 @@ class Auth:
 
         cookies = request.cookies.get(SESSION_NAME)
         return cookies
-
