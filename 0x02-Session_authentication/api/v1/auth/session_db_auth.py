@@ -5,7 +5,10 @@ from models.user_session import UserSession
 
 
 class SessionDBAuth(SessionExpAuth):
-    def create_session(self, user_id=None):
+    """session db auth object instances"""
+
+    def create_session(self, user_id: str=None):
+        """this is create session method"""
         # Create a new session ID
         session_id = self.generate_session_id()
         
@@ -15,7 +18,8 @@ class SessionDBAuth(SessionExpAuth):
 
         return session_id
 
-    def user_id_for_session_id(self, session_id=None):
+    def user_id_for_session_id(self, session_id: str=None):
+        """user id for session id method"""
         # Retrieve the UserSession from the database based on the session_id
         user_session = UserSession.query.filter_by(session_id=session_id).first()
         
@@ -25,6 +29,7 @@ class SessionDBAuth(SessionExpAuth):
             return None
 
     def destroy_session(self, request=None):
+        """destroy method"""
         # Retrieve the session ID from the cookie
         session_id = self.session_cookie(request)
         if session_id is None:
