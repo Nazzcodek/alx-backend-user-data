@@ -13,7 +13,7 @@ def msg() -> str:
     return jsonify({"message": "Bienvenue"})
 
 
-@app.route('/users', method['POST'])
+@app.route('/users', methods=['POST'])
 def users() -> str:
     '''route to register new user'''
     data = request.form
