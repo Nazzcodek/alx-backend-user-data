@@ -13,12 +13,13 @@ def msg() -> str:
     return jsonify({"message": "Bienvenue"})
 
 
-@app.route('/users' method['POST'])
+@app.route('/users', method['POST'])
 def users() -> str:
     '''route to register new user'''
+    data = request.form
     try:
-        email = request.form['email']
-        password = request.form['password']
+        email = data['email']
+        password = data['password']
     except KeyError:
         abort(400)
 
